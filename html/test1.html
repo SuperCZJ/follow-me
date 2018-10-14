@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 声明文档类型 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,7 @@
     <title>标签</title>
 </head>
 <body style="height:3000px">
-    <h1>1111</h1>
+    <h1>标题</h1>
     <p>段落</p>
     <a href="http:www.baidu.com" target="_blank">百度</a>
     <img src="C:\Users\hp-11\Desktop\其它\42-1P30G4133R10.jpg" title="这是一张图" alt="图片图片">
@@ -26,6 +27,7 @@
         <li>12</li>
         <li>13</li>
     </ol>
+    <!-- ol ul 里只能放li  -->
     <!-- 区块 用来布局 div+css -->
     <div>
         123
@@ -53,5 +55,52 @@
             <td>33</td>
         </tr>
     </table>
+    <form action="">
+        <div>
+            <label for="aa">用户名：</label>
+            <input id="aa" type="text">
+        </div>
+
+        <div>
+            <span>用户名：  </span><input type="text">
+        </div>
+        
+        <div>
+            <span>密码：</span><input type="password">
+        </div>
+        <br/>
+        
+        <div>
+            <!-- 单选框 -->
+            <input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+            <br/>
+            <!-- 复选框 -->
+            <input type="checkbox" name="hobby">足球
+            <input type="checkbox" name="hobby">篮球
+            <input type="checkbox" name="hobby">网球
+            <!-- 下拉框 -->
+            <select>
+                <option value="">16</option>
+                <option value="">17</option>
+                <option value="">18</option>
+            </select>
+            <!-- 文本域 -->
+            <textarea></textarea>
+
+            <button>提交</button>
+
+            <input type="submit" value="提交表单">
+        </div>
+
+    </form>
+    <!--
+        行级元素 多个占一行 (行元素不能设置宽高)
+        a span label strong b
+        块级元素 自己占一行 (可以设置宽高)
+        h1 p ul ol div table 
+        行级块元素
+        img input
+    -->
 </body>
 </html>
