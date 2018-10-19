@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        body{
+            height: 3000px;
+        }
         #div1{
             /* background: red; */
             /* color: yellow; */
@@ -19,6 +22,48 @@
             background: yellow url(../ddd.jpg) no-repeat 50% 50%;
 
         }
+        #div2{
+            background: #ff0000;
+            /* 文本水平对齐方式 */
+            text-align: center;
+            /* 单行文字垂直居中 行高=高度 */
+            height: 50px;
+            line-height: 50px;
+        }
+        a{
+            /*  */
+            text-decoration: line-through;
+            color: orchid;
+        }
+        #div3{
+            font-family: sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            font-style: italic;
+            /* 鼠标滑过小手状 */
+            cursor: pointer;
+
+        }
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: green;
+        }
+        a:hover{
+            color: yellow;
+        }
+        a:active{
+            color: blue;
+        }
+        ul{
+            /* 列表样式 none 去掉... */
+            list-style: none;
+            background: red;
+        }
+        ul li{
+            background: green;
+        }
     
     </style>
 </head>
@@ -28,6 +73,18 @@
     <div id="div1">
         asdf
     </div>
+    <div id="div2">
+        hahahah
+    </div>
+    <a href="#">ali</a>
+    <div id="div3">
+        hehee
+    </div>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
 
     
 </body>
