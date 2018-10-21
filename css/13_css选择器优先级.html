@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div{
+            background: red;
+        }
+        #aa{
+            background: blue;
+        }
+        .bb{
+            background: green;
+        }
+     */
+        h1{
+            background: red;
+        }
+        #div3 .cc h1{
+            background: blue;
+        }
+        .cc h1{
+            background: yellow;
+        }
+        #h111{
+            background: green;
+        }
+    
+    
+    
+    
+    
+    </style>
+    <!-- 
+        内联优先级最高
+        选择器相同时 下面的会覆盖上面的
+        选择器优先级 style(1000) > id(100) > class,伪类(10) > 标签,伪元素(1)
+     -->
+</head>
+<body>
+    <!-- <div id="aa" class="bb">11</div>
+    <div class="bb">22</div> -->
+    <div id="div2">
+        <div id="div3">
+            <div class="cc">
+                <h1 id="h111">
+                    111111
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
