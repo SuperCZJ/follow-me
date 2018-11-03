@@ -202,10 +202,25 @@
     padding: 10px 0px 19px 30px;
 }
 .list-right{
-    width: 189px;
-    height: 500px;
-    background: #0000ff;
+    width: 177px;
+    height: 488px;
+    background: gainsboro;
+    border: 6px solid gainsboro;
     float: right;
+}
+.list-right a{
+    line-height: 0px;
+    float: left;
+}
+.list-right a img{
+    width: 85px;
+    height: 45px;
+    padding:2px 0 1px 3px;
+}
+.list-right a .a1{
+    width: 173px;
+    height: 98px;
+    padding:2px 0 1px 3px;
 }
 .left-list-title{
     width: 89px;
