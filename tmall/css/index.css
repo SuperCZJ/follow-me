@@ -1,6 +1,6 @@
 .logo{
     float: left;
-    margin-left:-57px;
+    margin-left:-45px;
 }
 #search{
     width: 1230px;
@@ -36,7 +36,7 @@
 }
 .search-list{
     margin-top: 9px;
-    margin-left: -14px;
+    margin-left: -12px;
 }
 .search-list li{
     float: left;
@@ -59,6 +59,7 @@
     width: 1030px;
     margin:0 auto;
     padding-left:200px;
+    border-bottom: 2px solid #ff0036;
 }
 .inner-cont img{
     width: 100px;
@@ -107,6 +108,8 @@
 }
 .main-cate-box{
     background: rgba(0,0,0,0.55);
+    position: relative;
+    z-index: 2;
 }
 .category .main-cate{
     height: 33.4px;
@@ -176,4 +179,100 @@
 }
 .category .main-cate:nth-child(15):hover>a,.category .main-cate:nth-child(15):hover>.main-cate-1,.category .main-cate:nth-child(15):hover>i{
     color: burlywood;
+}
+/*  */
+.cate-sub-list{
+    width: 805px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    left: 200px;
+    top:0px;
+    /* top: -33.4px; */
+    display: none;
+}
+.main-cate:hover .cate-sub-list{
+    display: block;
+}
+.list-left{
+    width: 566px;
+    height: 462px;
+    /* background: #ff0000; */
+    float: left;
+    padding: 10px 0px 19px 30px;
+}
+.list-right{
+    width: 189px;
+    height: 500px;
+    background: #0000ff;
+    float: right;
+}
+.left-list-title{
+    width: 89px;
+    float: left;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 5px;
+    /* background: #f000f0; */
+}
+.left-list-content{
+    width: 477px;
+    float: left;
+    /* background: #999; */
+    border-bottom:1px dashed rgba(0,0,0,.1);
+}
+.left-list-content a{
+    color: #666;
+    font-size:14px;
+    margin-right:13px;
+}
+.left-list-content li{
+    float: left;
+}
+.list-left-row{
+    margin:5px 0;
+}
+.left-list-content .special-color{
+    color:#e54077;
+}
+.left-list-content li:hover .special-color1{
+    color:#e54077;
+}
+/* 轮播图 */
+.slide-img-box img{
+    width: 1230px;
+    display: block;
+    height: 500px;
+}
+.slide-box{
+    position: relative;
+    height: 500px;
+}
+.slide-box a{
+    position: absolute;
+    left:0px;
+    top:0px; 
+}
+.slide-btn-box{
+    position: absolute;
+    bottom:50px;
+    left:50%;
+    /* background: yellow; */
+    width: 400px;
+    /* 已知宽度 */
+    /* margin-left:-100px; */
+    /* 不知道宽度  css3 transform: translateX(-50%); */
+    /* transform: translateX(-50%);    */
+}
+.slide-btn-box li{
+    float: left;
+    width: 25px;
+    height: 5px;
+    margin-left: 5px;
+    background: rgba(0,0,0,0.3);
+}
+.slide-btn-box li:hover{
+    color: #666;
 }
