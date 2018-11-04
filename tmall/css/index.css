@@ -296,7 +296,7 @@
 }
 /* 品牌闪购 */
 .brand-sale{
-    height: 500px;
+    height: 400px;
     width: 1230px;
     margin: 0 auto;
     margin-top:30px;
@@ -385,3 +385,73 @@
 .brand-list1-img:hover{
     opacity: 0.5;
 }
+/* 图片区 */
+.content-paper{
+    width: 1230px;
+    height: 327px;
+    background: #999;
+    margin: 0 auto;
+}
+.content-paper-1{
+    width: 122px;
+    height: 108px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    position: relative;
+    float: left;
+}
+.content-paper-list{
+    width: 122px;
+    height: 108px;
+    background: #fff;
+    /* position: absolute; */
+}
+.content-paper-enter{
+    width: 122px;
+    height: 108px;
+    /*display: none;
+    */position: absolute;
+    top:0px;
+    left: 0px;
+    background: rgba(0,0,0,0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease ;
+    -webkit-transition: opacity 0.5s ease ;
+    -moz-transition: opacity 0.5s ease ;
+    -ms-transition: opacity 0.5s ease ;
+    -o-transition: opacity 0.5s ease ;
+}
+.content-paper-list img{
+    width: 100px;
+    height: 50px;
+    padding: 29px 11px;
+}
+.content-paper-1:hover .content-paper-enter{
+    opacity: 1;
+}
+.content-paper-enter1{
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    height: 61px;
+    line-height: 90px;
+}
+/* .content-paper-enter span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+.content-paper-enter2{
+    color: #fff;
+    width:63px;
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FF0036;
+    border-radius: 9px;
+    margin: 0 auto;
+}
+
+
+
+
