@@ -387,54 +387,54 @@
 }
 /* 图片区 */
 .content-paper{
-    width: 1230px;
+    /* width: 1230px;
     height: 327px;
     background: #999;
-    margin: 0 auto;
+    margin: 0 auto; */
+    height: 327px;
+    margin-top: 15px;
 }
 .content-paper-1{
     width: 122px;
     height: 108px;
     margin-right: 1px;
     margin-bottom: 1px;
+    overflow: hidden;
     position: relative;
     float: left;
 }
-.content-paper-list{
+/* .content-paper-list{
     width: 122px;
     height: 108px;
     background: #fff;
-    /* position: absolute; */
-}
+    /* position: absolute; 
+} */
 .content-paper-enter{
-    width: 122px;
-    height: 108px;
-    /*display: none;
-    */position: absolute;
+    position: absolute;
+    left:0px;
     top:0px;
-    left: 0px;
-    background: rgba(0,0,0,0.8);
+    bottom:0px;
+    right:0px;
+    background:rgba(0,0,0,0.8);
+    /* width:100%;
+    height: 100%; */
+    text-align: center;
     opacity: 0;
     transition: opacity 0.5s ease ;
-    -webkit-transition: opacity 0.5s ease ;
-    -moz-transition: opacity 0.5s ease ;
-    -ms-transition: opacity 0.5s ease ;
-    -o-transition: opacity 0.5s ease ;
 }
 .content-paper-list img{
-    width: 100px;
+    width: 82%;
     height: 50px;
-    padding: 29px 11px;
+    display: block;
+    margin:30px auto;
 }
 .content-paper-1:hover .content-paper-enter{
     opacity: 1;
 }
 .content-paper-enter1{
-    color: white;
+    color: #fff;
     text-align: center;
-    font-size: 12px;
-    height: 61px;
-    line-height: 90px;
+    margin-top:38px;
 }
 /* .content-paper-enter span{
     overflow: hidden;
@@ -442,16 +442,98 @@
     white-space: nowrap;
 } */
 .content-paper-enter2{
-    color: #fff;
-    width:63px;
-    height: 18px;
-    font-size: 12px;
-    text-align: center;
-    background-color: #FF0036;
-    border-radius: 9px;
-    margin: 0 auto;
+   display: inline-block;
+   width: 63px;
+   height: 18px;
+   line-height: 18px;
+   background: #ff0036;
+   color: #fff;
+   text-align: center;
+   border-radius:9px;
+   margin-top:5px;
 }
-
+.content-paper-enter-1{
+    background: #FF0036;
+    color: #fff;
+}
+.iconfont{
+    font-size: 20px
+}
+.content-paper-1>.content-paper-enter-1>.content-paper-enter2{
+    font-size: 15px;
+}
+.content-paper-enter1>span>i{
+    transition: transform 0.5s ease-out;
+}
+.content-paper-enter1:hover>span>i{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+/* 天猫超市2 */
+.inner-cont2{
+    margin-top: 20px;
+    height: 665px;
+    background: pink;
+}
+/* .inner-cont2-title{
+    height: 500px;
+} */
+.inner-cont2-title-right{
+    float: right;
+    width: 800px;
+}
+.inner-cont2-title-right>a{
+    float: right;
+    height: 20px;
+    line-height: 35px;
+    margin: 5px 10px;
+    font-size: 14px;
+    color: #000;
+    text-align: right;
+    /* border: none;
+    border-bottom: 1px solid #f5f5f5; */
+}
+.inner-cont2-title-right>a:hover{
+    text-decoration:underline;
+}
+.inner-cont2-title-left{
+    /* float: left; */
+}
+.inner-cont2-title-left>img{
+    vertical-align: middle;
+    width: 214px;
+    height: 25px;
+    margin: 10px 0;
+}
+.inner-cont2-title-left>a{
+    font-size: 12px;
+    color: #000;
+}
+.inner-cont2-picture{
+    float: left;
+    height: 618px;
+}
+.inner-cont2-picture-left{
+    height: 618px;
+    position: relative;
+}
+.inner-cont2-picture-left>a>img{
+    width: 235px;
+    height: 618px;
+    
+}
+.inner-cont2-picture-left2{
+    position: absolute;
+    top:500px;
+    left: 0;
+    background: #000;
+    
+}
+.xiaobiao{
+    background: rgba(0,0,0,.9);
+    width: 70px;
+    height: 64px;
+}
 
 
 
