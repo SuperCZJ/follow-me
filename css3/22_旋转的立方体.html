@@ -18,9 +18,18 @@
             margin:50px auto;
             /*background: #ff0000;*/
             position: relative;
-            /* -webkit-transform-style: preserve-3d; */
-            perspective: 800px;
+            -webkit-transform-style: preserve-3d;
+            /* perspective: 800px; */
             /*-webkit-animation: run 2s linear infinite ;*/
+            animation: run 4s linear infinite;
+        }
+        @keyframes run{
+            0%{
+
+            }
+            100%{
+                transform:rotateY(180deg);
+            }
         }
 
         #container div{
