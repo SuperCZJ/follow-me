@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function fib(n){
+            if(n<=2){
+                return 1;
+            }
+            return fib(n-1) + fib(n-2);
+        }
+        var j = 0;
+        for(var i = 40; i>0; i--)
+        {
+            document.write(fib(i)+",");
+            j++;
+            if(j % 6 == 0)
+            {
+                document.write("<br/>");
+            }
+        }
+    
+    
+    
+    </script>
+</body>
+</html>
