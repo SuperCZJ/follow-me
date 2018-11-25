@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实验一
+    //     function fn(n){
+    //         var sum = 0;
+    //         sum = 4*n*n + 3*n + 2;
+    //         return sum;
+    //     }
+    //     var num = prompt("请输入数字"); 
+    //     num = parseInt(num);
+       
+    //    document.write(fn(num)+'<br/>');
+      
+      
+
+       //实验二
+    //     var num2 = prompt("请输入数字");
+    //     var num3 = prompt("请输入数字");
+    //     num2 = parseInt(num2);
+    //     num3 = parseInt(num3);
+
+    //     function Min(x,y){
+    //         return  x<y?x:y;    
+    //     }
+    //     document.write(Min(num2,num3));
+
+          //实验三
+        // var j = 0;
+        // for ( var i=1; i<=1000; i++)
+        // {
+        //     if( i%3==0 && i%5==0 && i%7==0)
+        //     {
+        //         document.write(i+',');
+        //         j++;
+        //     }
+        //     if( j == 6)
+        //     {
+        //         document.write('<br/>');
+        //         j=0;
+        //     }
+        // }
+            
+
+            //实验四
+        //  var m = 0;
+        //  for ( var i = 100; i <=1000; i++)
+        //  {
+        //       ok = 0;
+        //     for(var j=2; j<i; j++)
+        //     {
+        //         if(i%j == 0)
+        //         {
+        //             ok = 1;
+        //         }
+        //     }
+        //     if (ok == 0)
+        //     {
+        //         document.write(i+',');
+        //         m++;
+        //         if(m%6 == 0)
+        //         {
+        //             document.write('<br/>');
+        //             m = 0;
+        //         }
+
+        //     }
+        //  }
+           
+
+        //    实验五
+        // var sum = 1,num = 1;
+        // function factorial(){
+        //     for ( var i=1; i<=12; i++)
+        //     {
+        //         sum =  sum * i;
+        //     }
+        //     for ( var i=1; i<=10; i++)
+        //     {
+        //         num =  num * i;
+        //     }
+        //     return sum-num;
+        // }
+        // document.write(factorial());
+
+           //实验六
+        // function asd(n){
+        //     for(var i=1; i<=n; i++){
+        //         for(var j=1; j<=n-i;j++){
+        //             document.write("&nbsp;");
+        //         }
+        //         for(var k=1; k<=i; k++){
+        //             document.write("*&nbsp;");
+        //         }
+        //         document.write("<br/>");
+        //     }
+        // }
+        // var num = prompt("请输入数字"); 
+        // num = parseInt(num);
+        // asd(num);
+       
+         //实验七
+        // function fib(n){
+        //     if (n<=2){
+        //         return 1;
+        //     }
+        //     return fib(n-1) + fib(n-2);
+        // }
+        // document.write(fib(2));
+
+//  
+//         var f1 = 1, f2 = 1, temp;
+//         function fib1(m){
+//             if(m<=2){
+//                 return 1;
+//             }
+//             for(var  i=3; i<=m; i++)
+//             {
+//                 temp = f1 + f2;
+//                 f1 = f2;
+//                 f2 = temp;
+//             }
+//             return f2;
+//         }
+//         document.write(fib1(8)); 
+        
+
+        // 实验九
+        // var win = 0;
+        // var sum = 0;
+        // var str = "";
+        // function play(){
+        //     sum++;
+        //     str = "";
+        //     var a = Math.floor( Math.random() * 9 + 1 );
+        //     var b = Math.floor( Math.random() * 9 + 1 );
+        //     var c = Math.floor( Math.random() * 9 + 1 );
+        //     str = a + "," + b + "," + c;
+        //     if (a == 8 || b == 8 || c == 8)
+        //     {
+        //         win++;
+        //         str += "\n" + "赢了" + "\n";
+        //     }
+        //     else
+        //     {
+        //         str +=  "\n" + "输了" + "\n" ;
+        //     }
+        //     str += ( win/sum * 100 ).toFixed(2) + "%";
+        // }
+        // do{
+        //     play();
+        // }while(confirm(str));
+          
+
+          
+        function merge(s1,s2){
+            // s1.length > s2.length ? s1.length:s2.length;
+            var maxLength = Math.max(s1.length,s2.length);
+            var result = "";
+            for(var i=0; i<maxLength; i++){
+                if(i < s1.length){
+                    result += s1[i];
+                }
+                if(i < s2.length){
+                    result += s2[i];
+                }
+            }
+            return result;
+        }
+
+        document.write( merge("123","abcggg"));
+    
+    
+    
+    </script>
+</body>
+</html>
