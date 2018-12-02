@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            /* 解决塌陷问题 */
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: #bbe1f1;
+            margin-right:3px;
+        }
+        li.selected{
+            background:#96c2f1;
+        }
+        #content div{
+            width: 246px;
+            height: 180px;
+            background: #ffebcd;
+            display: none;
+        }
+        #content div.active{
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <ul id="container">
+        <ul id="btn-box">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="content">
+            <div  class="active"></div>
+            <div>content2222</div>
+            <div>content3333</div>
+        </div>
+    </div>
+    <script>
+        var index = 0;
+        var timer = null;
+        var aLi = document.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+        //点击切换
+        for(var i=0; i<aLi.length; i++){ //页面加载的时候就会执行，给三个li都绑定点击事件
+            aLi[i].idx = i;
+            aLi[i].onclick = function(){
+                //i = 3  所以 aLi[i]会返回undefined
+                //this指对当前的对象的引用  点击的是谁 this就是谁
+                for(var j=0; j<aLi.length; j++){ //清楚所有li的className
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = 'selected'; //给自己添加class = selected
+                aDiv[this.idx].className = "active";
+            }
+        }
+        //自动切换
+        if(timer){
+            clearInterval(timer);
+            timer = null;
+        }
+            //添加定时器，改变当前高亮的索引
+        timer = setInterval(autoPlay, 4000);
+
+        function autoPlay() {
+            index++;
+            if(index >= aLi.length) {
+                index = 0;
+            }
+            changeOption(index);
+        }
+
+        function changeOption(curIndex) {
+            // console.log(curIndex);
+            for(var j = 0; j < aLi.length; j++) {
+                aLi[j].className = "";
+                    aDiv[j].className = "";
+            }
+            //高亮显示当前页签
+            aLi[curIndex].className = 'selected';
+            aDiv[curIndex].className = "active";
+            index = curIndex;
+        }
+
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
