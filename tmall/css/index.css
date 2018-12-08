@@ -669,16 +669,62 @@
     line-height: 57px;
     text-align: center;
     padding: 0 79px;
+    color: #fff;
+    background: #999;
+}
+.xuanxiang>.selected{
+   
     background: green;
 }
 .inner-cont2-right-1-3{
     position: absolute;
     top: 57px;
     left: 0;
-}
-.inner-cont2-right-1-3>img{
     width: 462px;
     height: 225px;
+    display: none;
+}
+.right-1-3-4{
+    position: absolute;
+    top: 100px;
+    height: 87px;
+    width: 291px;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-image: url(../image/290-87.png);
+}
+.active{
+    display: block;
+}
+.right-1-3-4-1{
+    margin-left: 26px;
+    margin-top: 8px;
+    vertical-align: middle!important;
+}
+.right-1-3-4-1>img{
+    width: 23px;
+    height: 23px;
+    margin-top: -10px;
+    vertical-align: middle;
+}
+.right-1-3-4-1>span{
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00B262;
+    /* letter-spacing: 1px; */
+}
+.right-1-3-4-2>span{
+    margin-left: 26px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.inner-cont2-right-1-3 .img1{
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
+    width: 200px;
+    height: 200px;
 }
 .inner-cont2-right-2{
     float: left;

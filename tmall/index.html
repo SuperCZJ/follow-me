@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/iconfont1.css">
 </head>
 <body>
     <!-- 广告位 -->
@@ -3693,14 +3692,35 @@
             <div class="inner-cont2-right">
                 <div class="inner-cont2-right-11">
                     <div class="inner-cont2-right-1">
-                        <div class="inner-cont2-right-1-1">
-                            <span>今日疯抢</span>
+                        <div class="inner-cont2-right-1-1 xuanxiang">
+                            <span class="selected aa">今日疯抢</span>
                         </div>
-                        <div class="inner-cont2-right-1-2">
-                            <span> 量板装</span>
+                        <div class="inner-cont2-right-1-2 xuanxiang">
+                            <span class="aa"> 量板装</span>
+                        </div>
+                        <div class="inner-cont2-right-1-3 active">
+                            <div class="right-1-3-4">
+                                <div class="right-1-3-4-1">
+                                    <img src="../tmall/image/23-23.png" alt="">
+                                    <span>限时限量疯抢</span>
+                                </div>
+                                <div class="right-1-3-4-2">
+                                    <span>一元超值疯抢中</span>
+                                </div>
+                            </div>
+                            <img class="img1" src="../tmall/image/400-400.jpg" alt="">
                         </div>
                         <div class="inner-cont2-right-1-3">
-                            <img src="../tmall/image/002.png" alt="">
+                            <div class="right-1-3-4">
+                                <div class="right-1-3-4-1">
+                                    <img src="../tmall/image/23-23.png" alt="">
+                                    <span>沙宣去屑疯抢中</span>
+                                </div>
+                                <div class="right-1-3-4-2">
+                                    <span>限时抢第2件0元</span>
+                                </div>
+                            </div>
+                            <img class="img1" src="../tmall/image/400-401.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -3721,6 +3741,29 @@
 
 
     </div>
-    
+<script>
+        var index = 0; 
+        var aLi = document.getElementsByClassName('aa');
+        var aDiv = document.getElementsByClassName('inner-cont2-right-1-3');
+        //点击切换
+        for(var i=0; i<aLi.length; i++){ //页面加载的时候就会执行，给三个li都绑定点击事件
+            aLi[i].idx = i;
+            aLi[i].onclick = function(){
+                //i = 3  所以 aLi[i]会返回undefined
+                //this指对当前的对象的引用  点击的是谁 this就是谁
+                for(var j=0; j<aLi.length; j++){ //清楚所有li的className
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = 'selected'; //给自己添加class = selected
+                aDiv[this.idx].className = "active";
+            }
+        }
+
+
+
+
+
+</script>   
 </body>
 </html>

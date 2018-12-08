@@ -53,7 +53,7 @@
     </div>
     <script>
         var index = 0;
-        var timer = null;
+        // var timer = null;
         var aLi = document.getElementsByTagName('li');
         var oContent = document.getElementById('content');
         var aDiv = oContent.getElementsByTagName('div');
@@ -71,33 +71,33 @@
                 aDiv[this.idx].className = "active";
             }
         }
-        //自动切换
-        if(timer){
-            clearInterval(timer);
-            timer = null;
-        }
-            //添加定时器，改变当前高亮的索引
-        timer = setInterval(autoPlay, 4000);
+        // //自动切换
+        // if(timer){
+        //     clearInterval(timer);
+        //     timer = null;
+        // }
+        //     //添加定时器，改变当前高亮的索引
+        // timer = setInterval(autoPlay, 4000);
 
-        function autoPlay() {
-            index++;
-            if(index >= aLi.length) {
-                index = 0;
-            }
-            changeOption(index);
-        }
+        // function autoPlay() {
+        //     index++;
+        //     if(index >= aLi.length) {
+        //         index = 0;
+        //     }
+        //     changeOption(index);
+        // }
 
-        function changeOption(curIndex) {
-            // console.log(curIndex);
-            for(var j = 0; j < aLi.length; j++) {
-                aLi[j].className = "";
-                    aDiv[j].className = "";
-            }
-            //高亮显示当前页签
-            aLi[curIndex].className = 'selected';
-            aDiv[curIndex].className = "active";
-            index = curIndex;
-        }
+        // function changeOption(curIndex) {
+        //     // console.log(curIndex);
+        //     for(var j = 0; j < aLi.length; j++) {
+        //         aLi[j].className = "";
+        //             aDiv[j].className = "";
+        //     }
+        //     //高亮显示当前页签
+        //     aLi[curIndex].className = 'selected';
+        //     aDiv[curIndex].className = "active";
+        //     index = curIndex;
+        // }
 
     
     
