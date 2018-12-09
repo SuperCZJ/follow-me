@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #div1{
+            width:750px;
+            height: 291px;
+            margin:100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #container{
+            width:3750px;
+            height: 291px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 1s linear;
+        }
+       
+        #img-box img{
+            float: left;
+        }
+        /* 图片 
+        #img-box .active{
+            display: block;
+        } */
+        #btn-box li,#arrow-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            margin-right: 5px;
+            color:#fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btn-box .selected{
+            background: #ff0036;
+        }
+        #btn-box{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+        }
+        #arrow-box{
+            position: absolute;
+            left:10px;
+            bottom:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="container">
+            <div id="img-box">
+                <img class="active" src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <ul id="btn-box">
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <ul id="arrow-box">
+                <li id="prev">&lt;</li>
+                <li id="next">&gt;</li>
+            </ul>
+    </div>
+
+    
+<script>
+    var inow = 0;
+    var timer;
+    var aaa = document.getElementById('btn-box');
+    var  ali = aaa.getElementsByTagName('li');
+    var aimg = document.getElementsByTagName('img');
+    var bb = document.getElementById('next');
+    var aa = document.getElementById('prev');
+    var cc = document.getElementById('container');
+    for(var i=0; i<ali.length; i++){
+        ali[i].index = i;
+        ali[i].onclick = function(){
+           change(this.index);
+           inow = this.index;
+        }
+    }
+    bb.onclick = function(){
+        change(inow);
+        inow++;
+        if(inow == ali.length){
+            inow = 0;
+        }
+    }
+    aa.onclick = function(){
+        inow--;
+        if(inow == -1){
+            inow = ali.length - 1;
+        }
+        change(inow);
+    }
+    function change(idx){
+        for(var j=0; j<ali.length; j++)
+            {
+                ali[j].className = '';
+                cc.style.left = 0;
+            }
+            ali[idx].className = 'selected';
+            cc.style.left = idx*(-750) + 'px';
+    }
+    run();
+    cc.onmouseover = function(){
+        clearInterval(timer);
+    }
+    cc.onmouseout = function(){
+        run();
+    }       
+    function run(){
+        timer = setInterval(function(){
+            bb.onclick();
+        },2000);
+    }
+
+    
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>

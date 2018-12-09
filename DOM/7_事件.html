@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #div1{
+            width: 50px;
+            height: 100px;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: none;
+        }
+        li{
+            text-align: center;
+            background: white;
+            margin-top: 3px;
+        }
+        
+        li:hover{
+            background: greenyellow;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>asd</li>
+            <li>qwe</li>
+            <li>zcx</li>
+            <li>edc</li>
+        </ul>
+
+    </div>
+
+    <script>
+        var abc = document.getElementById('div1');
+        var ali = document.getElementsByTagName('li');
+        document.oncontextmenu = function(e){
+            // alert(e.clientX);
+           
+            abc.style.display = 'block';
+            abc.style.left = e.clientX + 'px';
+            abc.style.top = e.clientY + 'px';
+            return false;
+            
+        }
+        for(var i=0; i<ali.length; i++){
+            ali[i].onclick = function(){
+                console.log(this.innerHTML);
+                abc.style.display = 'none';
+            }
+        }
+    
+    
+    
+    </script>
+</body>
+</html>
