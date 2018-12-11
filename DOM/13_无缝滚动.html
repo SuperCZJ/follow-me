@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 520px;
+            position: absolute;
+            left: 0;
+        }
+        #content{
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            margin-right: 10px;
+            background: pink;
+            float: left;
+           
+        }
+        #button{
+            margin: 136px 94px;
+        }
+        #button span{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background: pink;
+            color: white;
+        }
+
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul id="num-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="button">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+        var onumbox = document.getElementById('num-box');
+        var aa = document.getElementById('left');
+        var bb = document.getElementById('right');
+        //var timer;
+        onumbox.innerHTML += onumbox.innerHTML;
+        onumbox.style.width = onumbox.offsetWidth * 2 + 'px';
+        var speed = -3;
+        setInterval(function(){
+            onumbox.style.left = onumbox.offsetLeft + speed +"px";
+            // left 值 小于等于 宽度的一半的时候  left设置成0
+            if(onumbox.offsetLeft <= -onumbox.offsetWidth/2){
+                onumbox.style.left = 0;
+            }
+            if( onumbox.offsetLeft > 0){
+                onumbox.style.left = -onumbox.offsetWidth/2 +"px";
+            }
+        },20)
+        bb.onclick = function(){
+            speed = 3;
+        }
+        aa.onclick = function(){
+            speed = -3;
+        }
+        // timer = setInterval(function(){
+        //     if(onumbox.offsetLeft == 0){
+        //         onumbox.style.left = -520 + 'px';
+        //     }
+        //     else{
+        //         onumbox.style.left = onumbox.offsetLeft + 2 + 'px';
+
+        //     }
+        // },20)
+        // aa.onclick = function(){
+        //     clearInterval(timer);
+        //         timer = setInterval(function(){
+        //         if(onumbox.offsetLeft == -520){
+        //             onumbox.style.left = 0;
+        //         }
+        //         else{
+        //             onumbox.style.left = onumbox.offsetLeft - 2 + 'px';
+
+        //         }
+        //     },20)
+        // }
+        // bb.onclick = function(){
+        //     clearInterval(timer);
+        //     timer = setInterval(function(){
+        //     if(onumbox.offsetLeft == 0){
+        //         onumbox.style.left = -520 + 'px';
+        //     }
+        //     else{
+        //         onumbox.style.left = onumbox.offsetLeft + 2 + 'px';
+
+        //     }
+        // },20)
+        // }
+
+
+        // var oNumBox = document.getElementById('num-box');
+        // var oRight = document.getElementById('right');
+        // var oLeft = document.getElementById('left');
+        // // 内容 复制
+        // oNumBox.innerHTML += oNumBox.innerHTML;
+        // // 宽度 *2
+        // oNumBox.style.width = oNumBox.offsetWidth * 2 +"px";
+        // var speed = -3;
+        // setInterval(function(){
+        //     oNumBox.style.left = oNumBox.offsetLeft + speed +"px";
+        //     // left 值 小于等于 宽度的一半的时候  left设置成0
+        //     if(oNumBox.offsetLeft <= -oNumBox.offsetWidth/2){
+        //         oNumBox.style.left = 0;
+        //     }
+        //     if( oNumBox.offsetLeft > 0){
+        //         oNumBox.style.left = -oNumBox.offsetWidth/2 +"px";
+        //     }
+        // },20)
+        // oRight.onclick = function(){
+        //     speed = 3;
+        // }
+        // oLeft.onclick = function(){
+        //     speed = -3;
+        // }
+
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>
