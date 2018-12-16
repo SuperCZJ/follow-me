@@ -173,6 +173,18 @@
             ali[idx].className = 'selected';
            
     }
+    run();
+    cc.onmouseover = function(){
+        clearInterval(timer);
+    }
+    cc.onmouseout = function(){
+        run();
+    }       
+    function run(){
+        timer = setInterval(function(){
+            bb.onclick();
+        },2000);
+    }
 
     
 
