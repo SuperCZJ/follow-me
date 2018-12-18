@@ -59,7 +59,7 @@
         var aDiv = oContent.getElementsByTagName('div');
         //点击切换
         for(var i=0; i<aLi.length; i++){ //页面加载的时候就会执行，给三个li都绑定点击事件
-            aLi[i].idxex = i;
+            aLi[i].index = i;
             aLi[i].onclick = function(){
                 //i = 3  所以 aLi[i]会返回undefined
                 //this指对当前的对象的引用  点击的是谁 this就是谁
@@ -68,10 +68,10 @@
                     aDiv[j].className = "";
                 }
                 this.className = 'selected'; //给自己添加class = selected
-                aDiv[this.idx].className = "active";
+                aDiv[this.index].className = "active";
             }
         }
-        // //自动切换
+        //自动切换
         if(timer){
             clearInterval(timer);
             timer = null;
@@ -91,7 +91,7 @@
             // console.log(curIndex);
             for(var j = 0; j < aLi.length; j++) {
                 aLi[j].className = "";
-                    aDiv[j].className = "";
+                aDiv[j].className = "";
             }
             //高亮显示当前页签
             aLi[curIndex].className = 'selected';
