@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse:collapse;
+            width: 400px;
+            height: 30px;
+        }
+        tr,td{
+            border: 1px solid black;
+            width:50%;
+            height: 30px;
+        }
+        .aa{
+            text-align: center;
+        }
+        .cc{
+            width: 98%;
+        }
+       
+    </style>
+</head>
+<body>
+    <table>
+       <tr class="aa">
+           <td>学号</td>
+           <td>姓名</td>
+       </tr>
+       <tr>
+           <td>1</td>
+           <td class="bb">事实上</td>
+       </tr>
+       <tr>
+            <td>2</td>
+            <td class="bb">zxc</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="bb">qwe</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="bb">wsx</td>
+        </tr>
+    </table>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+        $('.bb').on('click',function(){
+            if($(this).children("input").size() > 0){
+                return false;
+            }
+            var $val = $(this).html();
+            $(this).html('<input class="cc" value="'+$val+'"></input>');
+            $('.bb').children().trigger('select');
+        });
+        //后生成元素的事件绑定问题    解决方式 事件委托（将事件绑定到父元素身上）
+        $('.bb').on('keyup','input',function(e){
+            if(e.which == 13){
+                var val = $(this).val();
+                $(this).parent().html(val);
+            }
+        });
+        $('.bb').on('blur','input',function(e){
+            var val = $(this).val();
+            $(this).parent().html(val);
+        })
+    
+    
+    </script>
+</body>
+</html>

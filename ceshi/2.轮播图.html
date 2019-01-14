@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #div1{
+            width:750px;
+            height: 291px;
+            margin:100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #container{
+            width:4500px;
+            height: 291px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* transition: left 1s linear; */
+        }
+       
+        #img-box img{
+            float: left;
+        }
+        /* 图片 
+        #img-box .active{
+            display: block;
+        } */
+        #btn-box li,#arrow-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            margin-right: 5px;
+            color:#fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btn-box .selected{
+            background: #ff0036;
+        }
+        #btn-box{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+        }
+        #arrow-box{
+            position: absolute;
+            left:10px;
+            bottom:10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="container">
+            <div id="img-box">
+                <img class="active" src="../DOM/9_轮播图/img/1.jpg" alt="">
+                <img src="../DOM/9_轮播图/img/2.jpg" alt="">
+                <img src="../DOM/9_轮播图/img/3.jpg" alt="">
+                <img src="../DOM/9_轮播图/img/4.jpg" alt="">
+                <img src="../DOM/9_轮播图/img/5.jpg" alt="">
+                
+            </div>
+        </div>
+        <ul id="btn-box">
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <ul id="arrow-box">
+                <li id="prev">&lt;</li>
+                <li id="next">&gt;</li>
+            </ul>
+    </div>
+
+    <script src="../jquery/jquery-1.12.4.js"></script> 
+<script>
+    var i = 0;
+   $('#btn-box li').on('click',function(){
+       change($(this).index());
+       i = $(this).index();
+   });
+   $('#next').on('click',function(){
+       i++;
+       if(i == $('img').length){
+           i = 0;
+       }
+       change(i);
+
+   });
+   $('#prev').on('click',function(){
+       i--;
+       if(i == -1){
+           i = $('img').length-1;
+       }
+       change(i);
+
+   });
+   function change(index){
+      $('#btn-box li').eq(index).addClass('selected').siblings().removeClass('selected');
+      $('#container').animate({
+          left:-index*750
+      },1000);
+   }
+
+</script>
+
+
+    
+</body>
+</html>
