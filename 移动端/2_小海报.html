@@ -20,9 +20,14 @@
         }
         .img-box{
             width: 960px;
+            height: 540px;
             margin:50px auto;
+            background-image: url(小海报/img/01.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
         }
-        .img-box img{
+        /* .img-box img{
             width: 100%;
         }
         .img01_s,.img01_s_2x{
@@ -30,7 +35,7 @@
         }
         .img01{
             display: block;
-        }
+        } */
         .content{
             width: 960px;
             margin:0 auto;
@@ -54,16 +59,20 @@
             }
             .img-box{
                 width: 100%;
+                background-image: url(小海报/img/01_s_2x.jpg);
+               /*padding-top 百分比相对于父元素*/ 
+                padding-top: 56%;
+                height: 0;
             }
             .content{
                 width:100%;
             }
-            .img01{
+            /* .img01{
                 display: none;
             }
             .img01_s_2x{
                 display: block;
-            }
+            } */
             .left{
                 width: 63%;
             }
@@ -72,12 +81,18 @@
             }
         }
         @media screen and (max-width:480px){
-            .img01_s_2x{
+            .img-box{
+                width: 100%;
+                background-image: url(小海报/img/01_s.jpg);
+                padding-top: 56%;
+                height: 0;
+            }
+            /* .img01_s_2x{
                 display: none;
             }
             .img01_s{
                 display: block;
-            }
+            } */
             .left{
                 width: 100%;
             }
@@ -85,15 +100,17 @@
                 width: 100%;
             }
         }
+        /* 多行文本
+        */
     </style>
 </head>
 <body>
     <h2>页头</h2>
     <h2>标题</h2>
     <div class="img-box">
-        <img src="../移动端/小海报/img/01.jpg" class="img01" alt=""/>
+        <!-- <img src="../移动端/小海报/img/01.jpg" class="img01" alt=""/>
         <img src="../移动端/小海报/img/01_s.jpg" class="img01_s" alt=""/>
-        <img src="../移动端/小海报/img/01_s_2x.jpg" class="img01_s_2x" alt=""/>
+        <img src="../移动端/小海报/img/01_s_2x.jpg" class="img01_s_2x" alt=""/> -->
     </div>
     <div class="content">
         <div class="left">
