@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            width: 960px;
+            height: 75px;
+            margin: 30px auto;
+            background: grey;
+            text-align: center;
+            line-height: 75px;
+        }
+        .img-box{
+            width: 960px;
+            margin:50px auto;
+        }
+        .img-box img{
+            width: 100%;
+        }
+        .img01_s,.img01_s_2x{
+            display: none;
+        }
+        .img01{
+            display: block;
+        }
+        .content{
+            width: 960px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .left{
+            width: 630px;
+            background: #ff0000;
+            height: 300px;
+            float: left;
+        }
+        .right{
+            width: 300px;
+            background: #0000ff;
+            height: 300px;
+            float: right;
+        }
+        @media screen and (max-width:960px){
+            h2{
+                width:100%;
+            }
+            .img-box{
+                width: 100%;
+            }
+            .content{
+                width:100%;
+            }
+            .img01{
+                display: none;
+            }
+            .img01_s_2x{
+                display: block;
+            }
+            .left{
+                width: 63%;
+            }
+            .right{
+                width: 33%;
+            }
+        }
+        @media screen and (max-width:480px){
+            .img01_s_2x{
+                display: none;
+            }
+            .img01_s{
+                display: block;
+            }
+            .left{
+                width: 100%;
+            }
+            .right{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>页头</h2>
+    <h2>标题</h2>
+    <div class="img-box">
+        <img src="../移动端/小海报/img/01.jpg" class="img01" alt=""/>
+        <img src="../移动端/小海报/img/01_s.jpg" class="img01_s" alt=""/>
+        <img src="../移动端/小海报/img/01_s_2x.jpg" class="img01_s_2x" alt=""/>
+    </div>
+    <div class="content">
+        <div class="left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </div>
+        <div class="right">
+            <p>Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.</p>
+        </div>
+    </div>
+    <h2>页尾</h2>
+</body>
+</html>

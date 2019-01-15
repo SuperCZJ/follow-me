@@ -116,7 +116,7 @@
    });
    function change(index){
       $('#btn-box li').eq(index).addClass('selected').siblings().removeClass('selected');
-      $('#container').animate({
+      $('#container').stop().animate({
           left:-index*750
       },1000);
    }
