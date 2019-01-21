@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup.13 = "fn()" v-model = 'msg'>
+        <input type="radio" name="sex" v-model = 'sex'   value="boy">nan
+        <input type="radio" name="sex" v-model = 'sex'   value="girl">nv
+
+        <br>
+        <input type="checkbox" v-model = 'hobby' value="chi">chifan
+        <input type="checkbox" v-model = 'hobby' value="shui">shuijiao
+        <input type="checkbox" v-model = 'hobby' value="qiao">qiaodaima
+
+        <br>
+        <select v-model = 'school'>
+             <option value="hei">heida</option>
+             <option value="li">ligong</option>
+             <option value="lin">linda</option>
+        </select>
+        <br>
+        <h2>{{msg}}</h2>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'aaa',
+                sex:'boy',
+                hobby:['chi'],
+                school:'lin'
+            },
+            methods:{
+                fn(){
+                    console.log(123); 
+                }
+            }
+        });
+
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
