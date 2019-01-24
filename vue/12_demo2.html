@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app>div{
+            background: green;
+            width: 200px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        #app>.a{
+            background: red;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-for = '(obj,index) in list' :class='{a:obj.isA}' @click='add(obj)'>
+            {{obj.name}}  {{obj.price}}
+        </div>
+        <!-- <div @click='add' :class='{a:isA}'>aaa  123</div>
+        <div @click='add' :class='{a:isA}'>bbb  456</div>
+        <div @click='add' :class='{a:isA}'>ccc  111</div>
+        <div>ddd  222</div>
+        <div>eee  333</div> -->
+        <label for="">total:</label>
+        <label for="" >{{msg}}</label>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:0,
+                list:[{name:'aaa',price:123,isA:false},
+                {name:'bbb',price:124,isA:false},
+                {name:'ccc',price:125,isA:false},
+                {name:'ddd',price:126,isA:false},
+                {name:'eee',price:127,isA:false}
+                ]
+                
+            },
+            methods: {
+                add(obj){
+                    obj.isA = !obj.isA;
+                    if(obj.isA == true){
+                        this.msg += obj.price;
+                    }
+                    else{
+                        this.msg -= obj.price;
+                    }
+                }
+                
+            }
+
+        })
+    
+    
+    
+    </script>
+    
+</body>
+</html>

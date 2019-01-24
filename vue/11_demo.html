@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            color: #ff0036;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='msg' @keyup='filter()'>
+        <button @click='add()'>add</button>
+        <div>
+            <ul>
+                <!-- name 数组中的元素 index 代表索引 -->
+                <li v-for = '(obj,index) in showlist' :class='{a:obj.isA}' @click='change(obj)'>
+                    {{obj.val}} 
+                    <button @click='del(index)'>del</button> 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                list:[
+                ],
+                // 用来显示的数组
+                showlist:[
+
+                ],
+                msg:'',
+                
+            },
+            methods:{
+                add(){
+                    this.list.push({val:this.msg,isA:false});
+                    this.showlist = [...this.list];
+                    this.msg='';
+                },
+                del(idx){
+                    this.list.splice(idx,1);
+                    this.showlist = [...this.list];
+                },
+                change(obj){
+                    obj.isA=!obj.isA;
+                },
+                filter(){
+                    // 过滤的时候不能直接修改原数组 所以弄一个showList   过滤list数组中val 中包含 this.msg的 
+                    var arr = this.list.filter((obj) => {
+                        return obj.val.includes(this.msg);
+                    })
+                    this.showlist = arr;
+                }
+
+            }
+
+        })
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
