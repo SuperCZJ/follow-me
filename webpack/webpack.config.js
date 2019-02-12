@@ -18,9 +18,15 @@ module.exports = {
                 // use:['style-loader','css-loader']
                 use:ExtractTextPlugin.extract({
                     fallback:"style-loader",
-                    use:"css-loader"
+                    use:[{
+                        loader:"css-loader",
+                        options:{
+                            importLoaders:1
+                        }
+                    },'postcss-loader']
                 })
-            },{
+            },
+            {
                 test:/\.(jpg|png|gif)$/,
                 use:[
                     {
@@ -31,6 +37,18 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test:/\.html$/i,
+                loader:'html-withimg-loader'
+            },
+            {
+                test:/\.scss$/,
+                // use:['style-loader','css-loader','sass-loader']
+                use:ExtractTextPlugin.extract({
+                    fallback:"style-loader",
+                    use:["css-loader","sass-loader"]
+                })
             }
         ]
     },
