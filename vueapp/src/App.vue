@@ -1,26 +1,29 @@
 <template>
   <div id="app">
-    <router-link to="/head"></router-link>
-    <componentshead></componentshead>
+    <cheader></cheader>
+    <div id="content">
+        <h1>电影</h1>
+        <h1>电影</h1>
+        <h1>电影</h1>
+        <h1>电影</h1>
+    </div>
+    <cfooter></cfooter>
   </div>
 </template>
 <script>
-import componentshead from '@/components/componentshead';
+import cheader from '@/components/cheader';
+import cfooter from '@/components/cfooter';
 export default {
   components:{
-    componentshead
+    cheader,
+    cfooter
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  
-}
+#content{
+    margin:1rem 0;
+  }
 
 </style>
