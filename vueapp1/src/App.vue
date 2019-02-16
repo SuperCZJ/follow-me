@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <cheader :obj="obj"></cheader>
+    <cheader></cheader>
     <div id="content">
         <router-view></router-view>
     </div>
-    <cfooter :menu="menu" @changebg="color" :obj="obj"></cfooter>
+    <cfooter :menu="menu"></cfooter>
   </div>
 </template>
 <script>
 import cheader from '@/components/cheader';
 import cfooter from '@/components/cfooter';
+import {mapMutations} from "vuex";
 export default {
   data(){
     return {
@@ -34,27 +35,24 @@ export default {
            name:"图片",
            bg:"yellow"
          },
-      ],
-      obj:{name:"电影"}
+      ]
     }
   },
   components:{
     cheader,
     cfooter
   },
-  methods: {
-    color(obj){
-        this.obj = obj;
-    }
+  methods:mapMutations(["change"]),
+  created () {
+      let result = this.menu.filter((obj,index)=>{
+        return obj.path == this.$route.path;
+      });
+      if(result.length){
+        // 修改state中存的name color 改成result[0].name result[0].bgColor
+        this.change(result[0]);
+      }
   },
-  created() {
-    let result = this.menu.filter((obj,index)=>{
-        return obj.path == this.$route.path
-    });
-    if(result.length){
-      this.obj = result[0];
-    }
-  },
+  
 }
 </script>
 

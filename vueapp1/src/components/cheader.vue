@@ -1,15 +1,16 @@
 <template>
     <div>
-        <header :style="{background:obj.bg}">
+        <header :style="{background:color}">
             <span class="goHome">首页</span>
-            <span class="home">{{obj.name}}</span>
+            <span class="home">{{name}}</span>
         </header>
     </div>
 </template>
 
 <script>
+import {mapState} from "vuex";
     export default {
-        props:["obj"]       
+        computed: mapState(["color","name"])
     }
 </script>
 
