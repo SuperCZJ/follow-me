@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="container">
-            <li v-for="(obj,index) in movieList" :key="index">
+            <li v-for="(obj,index) in movieList" :key="index" @click="goDetail(obj.id)">
                 <img :src="obj.images.small" alt="">
                 <div class="info">
                     <h3>{{obj.title}}</h3>
@@ -57,12 +57,18 @@ import Axios from "axios";
                  Axios.get("/movie"+this.movieList.length+".json")
                 .then((result)=>{
                     this.movieList = [...this.movieList,...result.data.subjects];
-                    this.isShow = false;
+                    setTimeout(()=>{
+                        this.isShow = false
+                    },500);
+                    
                     if(this.movieList.length == result.data.total){
                         this.isBottom = true;
                     }
                 })
                 .catch();
+            },
+             goDetail(id){
+                this.$router.push('/moviedetail/'+id);
             }
         }
         
