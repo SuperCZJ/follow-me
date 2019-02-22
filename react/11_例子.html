@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+    class MyComponent extends React.Component{
+        constructor(parems){
+            super(parems);
+            this.state = {
+                list:["chifan","shuijiao","dadoudou"]
+            }
+            this.addhandler = this.addhandler.bind(this);
+        }
+        addhandler(val){
+            // console.log(123);
+            let list = [...this.state.list];
+            list.push(val)
+            this.setState({
+                 list
+            })
+        }
+        render() {
+            return (
+                <div>
+                    <h1>我是标题</h1>
+                    <Add addhandler = {this.addhandler}></Add>
+                    <List list={this.state.list}></List>                   
+                </div>
+            )
+        }
+    }
+    class Add extends React.Component{
+        constructor(props){
+            super(props);
+            this.adds = this.adds.bind(this);
+        }
+        adds(){
+            if(this.myInput.value){
+                this.props.addhandler(this.myInput.value);
+                this.myInput.value = "";
+            }
+            
+
+        }
+        render() {
+            return(
+                <div>
+                    <input type="text" ref={input=>{this.myInput = input}}/>
+                    <button onClick={this.adds}>add</button>
+                </div>
+            )
+            
+        }
+    }
+    class List extends React.Component{
+        render() {
+            return (
+                <ul>
+                    {this.props.list.map(function(val,index){
+                        return <li key={index}>{val}</li>
+                        
+                    })}
+                </ul>
+            )
+            
+        }
+    }
+    ReactDOM.render(<MyComponent></MyComponent>,document.getElementById('root'));
+        
+
+        
+        
+    </script>
+</body>
+</html>
