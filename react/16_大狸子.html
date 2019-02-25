@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+    var i = 4;
+    class MyComponent extends React.Component{
+        constructor(parems){
+            super(parems);
+            this.state = {
+                list:[
+                        {
+                            id:1,
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {
+                            id:2,
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {
+                            id:3,
+                            name:'敲代码',
+                            isActive:false
+                        }
+                ],
+                showlist:[
+                        {
+                            id:1,
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {
+                            id:2,
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {
+                            id:3,
+                            name:'敲代码',
+                            isActive:false
+                        }
+                ]
+            }
+            this.addhandler = this.addhandler.bind(this);
+            this.rm = this.rm.bind(this);
+            this.change = this.change.bind(this);
+            this.search = this.search.bind(this);
+        }
+        addhandler(val){
+            let list = [...this.state.list];
+                list.push({name:val,isActive:false,id:++i});//id:(new Date()).getTime()
+                this.setState({
+                    list,
+                    showlist:list
+                })
+        }
+        rm(id){
+            let list = this.state.list.filter((obj)=>{
+                return obj.id != id
+            })
+                this.setState({
+                    list,
+                    showlist:list
+                })
+        }
+        change(id){
+            // 找到数组中id = 参数id 的元素的索引index
+            let index = this.state.list.findIndex(function(obj,index){
+                return obj.id == id
+            })
+            let list = [...this.state.list];
+            // 2.修改数组中索引是index的元素的isActive  = ！isActive
+            list[index].isActive = !list[index].isActive;
+            this.setState({
+                    list,
+                    showlist:list
+                })
+        }
+        search(value){
+            let showlist = this.state.list.filter((obj)=>{
+                return obj.name.includes(value)
+            })
+            this.setState({
+                showlist
+            })
+        }
+        render() {
+            return (
+                <div>
+                    <h1>我是标题</h1>
+                    <Search search = {this.search}></Search>
+                    <Add addhandler = {this.addhandler}></Add>
+                    <List list={this.state.showlist} rm = {this.rm} change = {this.change}></List>                   
+                </div>
+            )
+        }
+    }
+    class Search extends React.Component {
+          render() {
+            return (
+                <div>
+                    <span>搜索：</span>
+                    <input type="text" onChange={
+                        (e)=>{
+                            this.props.search(e.target.value)
+                        }
+                    }/>
+                </div>
+            )
+          }
+        }
+    class Add extends React.Component{
+        constructor(props){
+            super(props);
+            this.adds = this.adds.bind(this);
+        }
+        adds(){
+                this.props.addhandler(this.myInput.value);
+                this.myInput.value = "";   
+        }
+        render() {
+            return(
+                <div>
+                    <span>添加：</span>
+                    <input type="text" ref={input =>{ this.myInput = input}}/>
+                    <button onClick={this.adds}>添加</button>
+                </div>
+            )
+            
+        }
+    }
+    class List extends React.Component{
+        render() {
+            return (
+                <ul>
+                    {this.props.list.map((task,index)=>{
+                        return(
+                            <li key={task.id} className={ task.isActive? 'active':''}>
+                                <input type="checkbox" defaultChecked={task.isActive} onClick={
+                                    ()=>{
+                                        this.props.change(task.id);
+                                    }
+                                }/>
+                                <span>{task.name}</span>
+                                <button onClick={()=>{this.props.rm(task.id)}}>删除</button>
+                            </li>
+                        )
+                        
+                        
+                    })}
+                </ul>
+            )
+            
+        }
+    }
+    ReactDOM.render(<MyComponent></MyComponent>,document.getElementById('root'));
+        
+
+        
+        
+    </script>
+</body>
+</html>
